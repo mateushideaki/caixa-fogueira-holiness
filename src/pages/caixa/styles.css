@@ -1,0 +1,83 @@
+#caixa-container {
+  height: 100%;
+}
+
+#caixa-container button {
+  height: 48px;
+  background: rgb(246, 227, 0);
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 0 20px;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+}
+
+section {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+section div {
+  flex: 1;
+  text-align: center;
+  padding: 50px;
+  color: white;
+  margin: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  box-shadow: 3px 3px 5px 1px#c3c0c0;
+  border-radius: 5px;
+  min-width: 350px;
+  max-width: 350px;
+}
+
+section div:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.pedido {
+  position: absolute;
+  bottom: 0;
+  padding: 50px;
+  box-shadow: 1px 2px 7px 1px;
+  background-color: rgb(246, 227, 0);
+  font-size: 16px;
+}
+
+#container-pagamento {
+  margin: 50px 0px 0px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+#container-pagamento input {
+  height: 48px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  padding-left: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+#container-pagamento h3 {
+    margin-top: 15px;
+}
+
+.pedido h3 {
+  margin-bottom: 10px;
+}
+
+.pedido h4 {
+  margin-top: 15px;
+}
