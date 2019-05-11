@@ -4,7 +4,6 @@
 
 #caixa-container button {
   height: 48px;
-  background: rgb(246, 227, 0);
   border-radius: 4px;
   font-size: 16px;
   padding: 0 20px;
@@ -15,6 +14,15 @@
   cursor: pointer;
 }
 
+.btn-troco {
+  background: rgb(246, 227, 0);
+}
+
+.btn-limpar {
+  margin-left: 10px;
+  background: rgb(154, 246, 0);
+}
+
 section {
   list-style-type: none;
   display: flex;
@@ -23,7 +31,7 @@ section {
   align-items: center;
 }
 
-section div {
+section .ficha {
   flex: 1;
   text-align: center;
   padding: 50px;
@@ -72,6 +80,7 @@ section div:hover {
 
 #container-pagamento h3 {
     margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .pedido h3 {
