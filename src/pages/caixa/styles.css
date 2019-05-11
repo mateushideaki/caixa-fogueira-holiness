@@ -107,6 +107,7 @@ section .ficha:hover {
   flex-flow: row wrap;
 }
 
+
 #container-pagamento input {
   height: 48px;
   border: 1px solid #ddd;
@@ -121,6 +122,22 @@ section .ficha:hover {
 #container-pagamento h3 {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.nota {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 4px;
+  color: #ddd;
+}
+
+.container-notas {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nota:hover {
+  cursor: pointer;
 }
 
 .pedido h3 {
@@ -146,6 +163,7 @@ section .ficha:hover {
 
 .icon-remove {
   color: red;
+  cursor: pointer;
 }
 
 .ml-5 {
