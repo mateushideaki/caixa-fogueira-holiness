@@ -17,7 +17,7 @@ const Caixa = () => {
         produtos: [
             { nome: 'Onigiri', valor: 1.00, cor: 'rgb(154, 246, 0)' },
             { nome: 'Espetinho', valor: 3.50, cor: 'rgb(246, 0, 68)' },
-            { nome: 'Yakissoba', valor: 15.00, cor: 'rgb(255, 239, 46)' },
+            { nome: 'Yakissoba', valor: 15.00, cor: 'rgb(246, 227, 0)' },
             { nome: 'Água', valor: 2.50, cor: 'rgb(0, 167, 246)' },
             { nome: 'Refrigerante', valor: 3.50, cor: 'rgb(157, 0, 255)' },
             { nome: 'Doce', valor: 2.50, cor: 'rgb(255, 85, 179)' },
@@ -146,7 +146,7 @@ const Caixa = () => {
 
             <div id="container-pagamento">
 
-                <h4>Valor Pagamento</h4>
+                <h3>Valor Pagamento</h3>
                 <input type="number" step="0.5" value={state.pagamento} onBlur={() => arredondaPagamento()} onChange={handleChange.bind(this)} placeholder="Valor pagamento"></input>
                 <div className="container-notas">
                     <span style={{ backgroundColor: '#31467c' }} className="nota" onClick={() => adicionaNota(2)}>R$ 2</span>
@@ -160,7 +160,7 @@ const Caixa = () => {
                     <button className="btn-troco" onClick={() => calculaTroco()}>Calcular Troco</button>
                     <button className="btn-limpar" onClick={() => limparTela()}>Limpar tela</button>
                 </div>
-                <h3>Troco: {formataValor(state.troco)}</h3>
+                <h3 className="mt-15 mb-15" >Troco: {formataValor(state.troco)}</h3>
             </div>
 
             <div className="pedido">

@@ -119,16 +119,19 @@ section .ficha:hover {
   margin-bottom: 3px;
 }
 
-#container-pagamento h3 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
 .nota {
   padding: 10px;
   margin: 5px;
   border-radius: 4px;
-  color: #ddd;
+  color: white;
+}
+
+.nota:hover {
+  opacity: 0.8;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 
 .container-notas {
@@ -142,9 +145,6 @@ section .ficha:hover {
 
 .pedido h3 {
   margin-bottom: 10px;
-}
-
-.pedido h4 {
   margin-top: 15px;
 }
 
@@ -176,4 +176,12 @@ section .ficha:hover {
 
 .ml-15 {
   margin-left: 15px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
 }
