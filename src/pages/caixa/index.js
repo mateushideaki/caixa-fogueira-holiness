@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { useAlert } from "react-alert";
+import { MdShoppingCart, MdCancel, MdRemoveCircle } from "react-icons/md";
 
 import './styles.css';
 
@@ -26,19 +27,20 @@ const Caixa = () => {
         ]
     });
 
-    const adicionaProduto = (produto) => {
+    const adicionaProduto = (produto, event, quantidade = 1) => {
+        event.stopPropagation();
         const itens = state.itens;
 
         let indexProdutoAdicionado = itens.findIndex(produtoAtual => produtoAtual.nome === produto.nome);
         let produtoAdicionado;
-        let total = state.total + produto.valor;
+        let total = state.total + (produto.valor * quantidade);
 
         if (indexProdutoAdicionado !== -1) {
             produtoAdicionado = itens[indexProdutoAdicionado];
-            produtoAdicionado.quantidade++;
+            produtoAdicionado.quantidade += quantidade;
             itens.splice(indexProdutoAdicionado, 1, produtoAdicionado);
         } else {
-            produtoAdicionado = { ...produto, quantidade: 1 };
+            produtoAdicionado = { ...produto, quantidade };
             itens.push(produtoAdicionado);
         }
         const produtos = state.produtos;
@@ -72,12 +74,18 @@ const Caixa = () => {
         <div id="caixa-container">
             <section>
                 {state.produtos.map((produto, index) => (
-                    <div className="ficha" onClick={() => adicionaProduto(produto)} key={index} style={{ backgroundColor: produto.cor }}>
+                    <div className="ficha" onClick={(e) => adicionaProduto(produto, e)} key={index} style={{ backgroundColor: produto.cor }}>
                         <div>
                             {produto.nome}
                         </div>
                         <div>
                             {formataValor(produto.valor)}
+                        </div>
+                        <div className="multipliers">
+                            <div onClick={(e) => adicionaProduto(produto, e, 2)}>x2</div>
+                            <div onClick={(e) => adicionaProduto(produto, e, 3)}>x3</div>
+                            <div onClick={(e) => adicionaProduto(produto, e, 4)}>x4</div>
+                            <div onClick={(e) => adicionaProduto(produto, e, 5)}>x5</div>
                         </div>
                     </div>
                 ))}
@@ -96,7 +104,12 @@ const Caixa = () => {
                 <h3>Pedido atual</h3>
                 <ul>
                     {state.itens.map((item, index) => (
-                        <li key={index}>{`${item.nome} (${item.quantidade})`}</li>
+                        <li key={index}>{`- ${item.nome} (${item.quantidade})`}
+                            <div>
+                                <MdRemoveCircle className="icon-remove ml-10" />
+                                <MdCancel className="icon-remove ml-5" />
+                            </div>
+                        </li>
                     ))}
                 </ul>
 

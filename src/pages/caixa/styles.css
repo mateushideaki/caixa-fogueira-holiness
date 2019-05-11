@@ -15,12 +15,17 @@
 }
 
 .btn-troco {
+  margin: 3px;
   background: rgb(246, 227, 0);
+  min-width: 200px;
+  max-width: 200px;
 }
 
 .btn-limpar {
-  margin-left: 10px;
+  margin: 3px;
   background: rgb(154, 246, 0);
+  min-width: 200px;
+  max-width: 200px;
 }
 
 section {
@@ -34,7 +39,7 @@ section {
 section .ficha {
   flex: 1;
   text-align: center;
-  padding: 50px;
+  padding: 20px;
   color: white;
   margin: 10px;
   font-size: 25px;
@@ -43,15 +48,40 @@ section .ficha {
   border-radius: 5px;
   min-width: 350px;
   max-width: 350px;
+  display: flex;
+  flex-flow: column;
+
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* Internet Explorer 10+ */
+  user-select: none; /* Likely future */
 }
 
-section div:hover {
-  opacity: 0.7;
+.ficha .multipliers {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.multipliers div {
+  padding: 10px;
+  margin-top: 15px;
+  border: 1px solid white;
+}
+
+.multipliers div:hover {
+  color: black;
+  border: 1px solid black;
+}
+
+section .ficha:hover {
+  opacity: 0.85;
   cursor: pointer;
 }
 
 .pedido {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   padding: 50px;
   box-shadow: 1px 2px 7px 1px;
@@ -60,7 +90,8 @@ section div:hover {
 }
 
 #container-pagamento {
-  margin: 50px 0px 0px 0px;
+  margin-top: 50px;
+  margin-bottom: 500px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -68,19 +99,28 @@ section div:hover {
   flex-flow: column wrap;
 }
 
+#container-pagamento div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
 #container-pagamento input {
   height: 48px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
-  padding-left: 20px;
-  margin-right: 10px;
+  padding-left: 15px;
+  margin-right: 3px;
   margin-top: 10px;
+  margin-bottom: 3px;
 }
 
 #container-pagamento h3 {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .pedido h3 {
@@ -89,4 +129,33 @@ section div:hover {
 
 .pedido h4 {
   margin-top: 15px;
+}
+
+.icon {
+  padding-top: 5px;
+}
+
+.pedido ul li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.icon-remove {
+  color: red;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.ml-15 {
+  margin-left: 15px;
 }
